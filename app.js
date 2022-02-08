@@ -1,26 +1,26 @@
 const p1 = {
     score: 0,
-    button = document.querySelector('#p1Button'),
-    display = document.querySelector('#p1Display')
+    button : document.querySelector('#p1Button'),
+    display : document.querySelector('#p1Display')
 
 }
 
 const p2 = {
     score: 0,
-    button = document.querySelector('#p2Button'),
-    display = document.querySelector('#p2Display')
+    button : document.querySelector('#p2Button'),
+    display : document.querySelector('#p2Display')
 
 }
 
 const resetButton = document.querySelector('#reset');
 const winningScoreSelect = document.querySelector('#playto');
 
-let winningScore = 3;
+let winningScore = 3 ;
 let isGameOver = false;
 
 function updateScores(player, opponent) {
      if (!isGameOver) {
-        player.score++; 
+        player.score+=1; 
         if (player.score === winningScore) {
             isGameOver = true;
             player.display.classList.add('has-text-success');
@@ -40,7 +40,7 @@ p2.button.addEventListener("click", () => {
   updateScores(p2,p1)
 });
 
-winningScoreSelect.addEventListener('change', () => {
+winningScoreSelect.addEventListener('change', function()  {
     winningScore = parseInt(this.value);
     reset();
 })
